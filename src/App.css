@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+#topbar {
+  position: fixed;
+  background-color: black;
+  color: yellow;
+  height: 50px;
+  width: 100%;
+  top: 0;
+  line-height: normal;
+  z-index: 100;
+/*  display: table;*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#topbar-placeholder {
+  height:60px;
+  width: 100%;
+  top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topbar-row {
+  display: table-row;
+  height: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.topbar-item {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.topbar-button:hover {
+  background-color:grey;
+  cursor:pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans','Helvetica Neue','Arial',sans-serif;
 }
+
+p {
+  display: inline;
+}
+
+select option {
+  background-color: white;
+}
+
+.fragmentList {
+  display: table;
+}
+
+.setEffect {
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.fragment {
+  display: table-row;
+}
+
+.fragment .checkbox {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 10px 20px 10px;
+}
+
+.fragment .info {
+  display: table-cell;
+  padding-left: 3px;
+  padding-bottom: 10px;
+}
+
+.fragment input[type=checkbox] {
+  transform: scale(2);
+}
+
+.unlocked {
+  color: green;
+}
+
+.locked {
+  color: red;
+}
+
+.locked-faint {
+  color: #ff6666;
+}
+
+#compute-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.set-combo {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.fragment-buttons {
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+/*.fragment:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%  ;
+}*/
