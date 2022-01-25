@@ -32,6 +32,12 @@
   cursor:pointer;
 }
 
+.content-top {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 body {
   margin: 0;
   font-family: 'IBM Plex Sans','Helvetica Neue','Arial',sans-serif;
@@ -93,15 +99,22 @@ select option {
   margin-right: 10px;
 }
 
+#compute-selection {
+  margin-bottom: 5px;
+}
+
+.compute-option {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .set-combo {
   padding: 10px;
   margin-bottom: 5px;
 }
 
 .fragment-buttons {
-  margin-left: 10px;
   margin-right: 5px;
-  margin-bottom: 10px;
 }
 
 /*.fragment:before {
@@ -110,3 +123,17 @@ select option {
   vertical-align: middle;
   height: 100%  ;
 }*/
+
+.filtered {
+  display: none !important;
+}
+
+.fragment-filters {
+  display: inline;
+  margin-left: 15px;
+}
+
+.filter-type {
+  display: inline-block;
+  margin-right: 10px;
+}

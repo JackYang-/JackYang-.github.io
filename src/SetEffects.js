@@ -10,7 +10,20 @@ class SetEffects extends React.Component {
 		//this.setEffects = props.setEffects;
 
 		//console.log(this.setEffects);
+
+		this.state = {
+			showLocked: true,
+			showUnlocked: true
+		};
 	}
+
+	flipShowLocked = (event) => {
+		this.setState({showLocked: !this.state.showLocked});
+	};
+
+	flipShowUnlocked = (event) => {
+		this.setState({showUnlocked: !this.state.showUnlocked});
+	};
 
 	render() {
 		const fragReqs = (reqFragsList) => {
@@ -31,20 +44,30 @@ class SetEffects extends React.Component {
 				}
 			}
 
-			return(<div className="setEffect" key={setEffect.name}>
-				<div className={numUnlocked >= setEffect.reqNum ? 'unlocked' : 'locked'}>
-					<b>{setEffect.name}
-					<p>
-						&nbsp;&nbsp;{'[' + numUnlocked + ' / ' + setEffect.reqNum + ']'}
-					</p>
-					</b>
-				</div>
-				<div>{setEffect.effects}</div>
-				<div>{fragReqs(setEffect.reqFragsList)}</div>
+			return(<div className={"setEffect" + ((numUnlocked >= setEffect.reqNum && !this.state.showUnlocked) || (numUnlocked < setEffect.reqNum && !this.state.showLocked) ? ' filtered': '')} key={setEffect.name}>
+					<div className={(numUnlocked >= setEffect.reqNum ? 'unlocked' : 'locked')}>
+						<b>{setEffect.name}
+						<p>
+							&nbsp;&nbsp;{'[' + numUnlocked + ' / ' + setEffect.reqNum + ']'}
+						</p>
+						</b>
+					</div>
+					<div>{setEffect.effects}</div>
+					<div>{fragReqs(setEffect.reqFragsList)}</div>
 			</div>);
 		});
 
 		return (<div>
+			<div className="content-top">
+				<div className="filter-type">
+					<input type="checkbox" defaultChecked={this.state.showLocked} onChange={this.flipShowLocked} />
+					<p>Unavailable Set Effects</p>
+				</div>
+				<div className="filter-type">
+					<input type="checkbox" defaultChecked={this.state.showLocked} onChange={this.flipShowUnlocked} />
+					<p>Available Set Effects</p>
+				</div>
+			</div>
 			{setList}
 		</div>);
 	}
