@@ -118,7 +118,7 @@ class SetCombos extends React.Component {
 			//the overlappers are found inside satisfactionMatrix
 			let numOverlaps = 0;
 			for (let i = 0; i < satisfactionMatrix.length; i ++) {
-				if (satisfactionMatrix[i] == 2 && this.props.unlocked[i]) {
+				if (satisfactionMatrix[i] === 2 && this.props.unlocked[i]) {
 					numOverlaps ++;
 				}
 			}
